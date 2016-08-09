@@ -53,14 +53,16 @@ export const deletePost = (req, res) => {
 
 
 export const updatePost = (req, res) => {
-  Post.findById(req.params.id, (err, post) => {
+  Post.update({ _id: req.params.id }, { title: req.body.title, tags: req.body.tags, content: req.body.content }, (err, post) => {
     if (err) {
       console.log(err);
     }
-    post.title = req.body.title;
-    post.tags = req.body.tags;
-    post.content = req.body.content;
-    post.save();
+    Post.findById(req.params.id, (err, doc) => {
+      if (err) {
+        console.log(err);
+      }
+      const update = { id: doc._id, title: doc.title, tags: doc.tags, content: doc.content };
+      res.json(update);
+    });
   });
-  res.send('updated a post');
 };
