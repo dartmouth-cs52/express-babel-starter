@@ -6,8 +6,6 @@ const PostSchema = new Schema({
   tags: String,
   content: String,
   author: { type: Schema.Types.ObjectId, ref: 'User' },
-}, {
-  timestamps: { created: 'Created at' },
 });
 
 // create model class
