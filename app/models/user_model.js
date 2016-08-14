@@ -6,10 +6,7 @@ const UserSchema = new Schema({
   username: String,
   email: { type: String, unique: true, lowercase: true },
   password: String,
-}, {
-  timestamps: { created: 'Created at' },
-}
-);
+});
 
 UserSchema.set('toJSON', {
   virtuals: true,

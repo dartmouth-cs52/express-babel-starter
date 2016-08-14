@@ -16,8 +16,9 @@ export const signup = (req, res, next) => {
   // const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
+  const username = req.body.username;
 
-  if (!email || !password) {
+  if (!username || !email || !password) {
     return res.status(422).send('You must provide a username, email and password');
   }
   // here you should do a mongo query to find if a user already exists with this email.
@@ -31,6 +32,7 @@ export const signup = (req, res, next) => {
       // user.username = username;
       user.email = email;
       user.password = password;
+      user.username = username;
 
       user.save().then(
         res.json({ token: tokenForUser(user) }))

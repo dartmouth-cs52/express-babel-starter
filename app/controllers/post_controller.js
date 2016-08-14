@@ -5,7 +5,7 @@ import Post from '../models/post_model';
 // and we purposefully don't return content here either
 const cleanPosts = (posts) => {
   return posts.map(post => {
-    return { id: post._id, title: post.title, tags: post.tags, author: post.author };
+    return { id: post._id, title: post.title, tags: post.tags };
   });
 };
 
@@ -15,7 +15,7 @@ export const createPost = (req, res) => {
   post.title = req.body.title;
   post.tags = req.body.tags;
   post.content = req.body.content;
-  post.author = req.user._id;
+  post.author = req.user.username;
   post.save()
   .then(result => {
     res.json({ message: 'Post created!' });
