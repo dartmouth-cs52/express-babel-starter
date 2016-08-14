@@ -3,9 +3,13 @@ import bcrypt from 'bcrypt-nodejs';
 
 // create a schema for posts with a field
 const UserSchema = new Schema({
+  username: String,
   email: { type: String, unique: true, lowercase: true },
   password: String,
-});
+}, {
+  timestamps: { created: 'Created at' },
+}
+);
 
 UserSchema.set('toJSON', {
   virtuals: true,
@@ -18,8 +22,6 @@ UserSchema.pre('save', function beforeyUserSave(next) {
 
   // only hash the password if it has been modified (or is new)
   if (!user.isModified('password')) return next();
-
-  // TODO: do stuff here
 
   // when done run the next callback with no arguments
   // call next with an error if you encounter one
