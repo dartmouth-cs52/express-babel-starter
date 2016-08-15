@@ -8,4 +8,7 @@
 
 
 ##### Extra Credit:
-- I made my note more stylish.
+- I made my app more stylish.
+- I can display an error message and let it disappear after 3 seconds.
+- In each post, it's able to show who's the author.
+- I used autofocus and onBlur to make editing process smooth.

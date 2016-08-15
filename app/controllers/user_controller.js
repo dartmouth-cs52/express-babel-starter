@@ -1,11 +1,12 @@
 import jwt from 'jwt-simple';
 import User from '../models/user_model';
-import config from '../config';
+import dotenv from 'dotenv';
+dotenv.config({ silent: true });
 
 // encodes a new token for a user object
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
-  return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+  return jwt.encode({ sub: user.id, iat: timestamp }, process.env.API_SECRET);
 }
 
 export const signin = (req, res, next) => {
