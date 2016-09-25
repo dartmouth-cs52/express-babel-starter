@@ -5,7 +5,7 @@ import Post from '../models/post_model';
 // and we purposefully don't return content here either
 const cleanPosts = (posts) => {
   return posts.map(post => {
-    return { id: post._id, title: post.title, tags: post.tags };
+    return { id: post._id, title: post.title, tags: post.tags.toString(), category: post.category };
   });
 };
 
@@ -14,7 +14,7 @@ export const createPost = (req, res) => {
   const post = new Post();
   post.title = req.body.title;
   post.tags = req.body.tags;
-  post.content = req.body.content;
+  post.category = req.body.category;
   post.author = req.user.username;
   post.save()
   .then(result => {
@@ -54,7 +54,7 @@ export const deletePost = (req, res) => {
 
 
 export const updatePost = (req, res) => {
-  Post.update({ _id: req.params.id }, { title: req.body.title, tags: req.body.tags, content: req.body.content }, (err, post) => {
+  Post.update({ _id: req.params.id }, { title: req.body.title, tags: req.body.tags, category: req.body.category }, (err, post) => {
     if (err) {
       console.log(err);
     }
@@ -62,7 +62,7 @@ export const updatePost = (req, res) => {
       if (err) {
         console.log(err);
       }
-      const update = { id: doc._id, title: doc.title, tags: doc.tags, content: doc.content };
+      const update = { id: doc._id, title: doc.title, tags: doc.tags, category: doc.category };
       res.json(update);
     });
   });

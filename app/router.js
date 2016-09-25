@@ -11,11 +11,11 @@ router.get('/', (req, res) => {
 });
 
 // your routes will go here
-router.route('/posts')
+router.route('/lists')
   .post(requireAuth, Posts.createPost)
   .get(Posts.getPosts);
 
-router.route('/posts/:id')
+router.route('/lists/:id')
   .get(Posts.getPost)
   .put(requireAuth, Posts.updatePost)
   .delete(requireAuth, Posts.deletePost);
