@@ -2,6 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
+// import routers
+import apiRouter from './router';
+
 // initialize
 const app = express();
 
@@ -17,6 +20,9 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
   res.send('hi');
 });
+
+// all of the "real" routes will be prefixed with /api
+app.use('/api', apiRouter);
 
 // START THE SERVER
 // =============================================================================
