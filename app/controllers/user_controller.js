@@ -2,7 +2,7 @@
 
 import UserModel from '../models/user_model';
 
-
+// TODO: add functionality to create many users at once
 export const createUser = (req, res) => {
   const user = new UserModel();
   user.firstName = req.body.firstName;
@@ -20,6 +20,9 @@ export const createUser = (req, res) => {
       res.json({ error });
     });
 };
+
+// TODO: add functionality for a teacher to only get relevant students
+// TODO: add functionality to fill in activities, gradeLevels, and categories
 export const getUsers = (req, res) => {
   UserModel.find()
     .then(result => {
@@ -29,6 +32,8 @@ export const getUsers = (req, res) => {
       res.json({ error });
     });
 };
+
+// TODO: add functionality to fill in activities, gradeLevels, and categories
 export const getUser = (req, res) => {
   UserModel.findById(req.params.id)
     .then(result => {
@@ -38,9 +43,13 @@ export const getUser = (req, res) => {
       res.json({ error });
     });
 };
+
+// TODO: build this function
 export const deleteUser = (req, res) => {
   res.send('delete a user here');
 };
+
+// TODO: build this function
 export const updateUser = (req, res) => {
   res.send('update a user here');
 };

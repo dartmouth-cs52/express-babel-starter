@@ -19,6 +19,8 @@ export const createActivity = (req, res) => {
       res.json({ error });
     });
 };
+
+// TODO: add functionality to only get "visible/allowed" activities
 export const getActivities = (req, res) => {
   ActivityModel.find()
     .then(result => {
@@ -28,6 +30,8 @@ export const getActivities = (req, res) => {
       res.json({ error });
     });
 };
+
+// TODO: build this function
 export const getActivity = (req, res) => {
   ActivityModel.findById(req.params.id)
     .then(result => {
@@ -37,9 +41,13 @@ export const getActivity = (req, res) => {
       res.json({ error });
     });
 };
+
+// TODO: build this function
 export const deleteActivity = (req, res) => {
   res.send('delete a activity here');
 };
+
+// TODO: build this function
 export const updateActivity = (req, res) => {
   res.send('update a activity here');
 };
