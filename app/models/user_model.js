@@ -18,7 +18,8 @@ const UserSchema = new Schema({
     started_activity: Date,   // the date and time when they started the activity
     finished_activity: Date,  // the date & time when they completed the activity
   }],
-  name: String,
+  firstName: String,
+  lastName: String,
   gradeLevels: [Number], // 1 => K-2, 2 => 3-5, 3 => 6-8
   categories: [Number], // 1=>autism, 2=>hearing, 3=>visual, 4=>learning, 5=>physical, 6=>social, 7=>speech, 8=>cognitive
   students: [Schema.Types.ObjectId], // this field will only be used when the user is a teacher
