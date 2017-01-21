@@ -4,9 +4,15 @@ import mongoose, { Schema } from 'mongoose';
 
 // the schema for the user model
 const UserSchema = new Schema({
-  username: String,
+  username: {
+    type: String,
+    unique: true,
+  },
   password: String,
-  role: Number, // the role will be 1 => admin, 2 => teacher, 3 => student
+  role: { // the role will be 1 => admin, 2 => teacher, 3 => student
+    type: Number,
+    required: true,
+  },
   activities: [{
     id: Schema.Types.ObjectId,
     started_activity: Date,   // the date and time when they started the activity

@@ -2,6 +2,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import mongoose from 'mongoose';
 
 // import routers
 import apiRouter from './router';
@@ -16,6 +17,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// DB Setup
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cp-api';
+mongoose.connect(mongoURI);
+// set mongoose promises to es6 default
+mongoose.Promise = global.Promise;
 
 // default index route
 app.get('/', (req, res) => {

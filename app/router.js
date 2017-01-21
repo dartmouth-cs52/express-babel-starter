@@ -7,41 +7,41 @@ import * as Activities from './controllers/activity_controller';
 const router = new Router();
 
 router.route('/users')
-  .get((res, req) => {
-    Users.getUsers(res, req);
+  .get((req, res) => {
+    Users.getUsers(req, res);
   })
-  .post((res, req) => {
-    Users.createUser(res, req);
+  .post((req, res) => {
+    Users.createUser(req, res);
   });
 
 router.route('/users/:id')
-  .get((res, req) => {
-    Users.getUser(res, req);
+  .get((req, res) => {
+    Users.getUser(req, res);
   })
-  .put((res, req) => {
-    Users.updateUser(res, req);
+  .put((req, res) => {
+    Users.updateUser(req, res);
   })
-  .delete((res, req) => {
-    Users.deleteUser(res, req);
+  .delete((req, res) => {
+    Users.deleteUser(req, res);
   });
 
 router.route('/activities')
-  .get((res, req) => {
-    Activities.getActivities(res, req);
+  .get((req, res) => {
+    Activities.getActivities(req, res);
   })
-  .post((res, req) => {
-    Activities.createActivity(res, req);
+  .post((req, res) => {
+    Activities.createActivity(req, res);
   });
 
 router.route('/activities/:id')
-  .get((res, req) => {
-    Activities.getActivity(res, req);
+  .get((req, res) => {
+    Activities.getActivity(req, res);
   })
-  .put((res, req) => {
-    Activities.updateActivity(res, req);
+  .put((req, res) => {
+    Activities.updateActivity(req, res);
   })
-  .delete((res, req) => {
-    Activities.deleteActivity(res, req);
+  .delete((req, res) => {
+    Activities.deleteActivity(req, res);
   });
 
 export default router;
