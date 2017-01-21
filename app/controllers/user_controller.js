@@ -44,9 +44,3 @@ export const deleteUser = (req, res) => {
 export const updateUser = (req, res) => {
   res.send('update a user here');
 };
-export const createStudents = (req, res) => {
-  res.send('this should create students');
-};
-export const getStudents = (req, res) => {
-  res.send('this should return all students');
-};

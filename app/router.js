@@ -25,14 +25,6 @@ router.route('/users/:id')
     Users.deleteUser(req, res);
   });
 
-router.route('/users/:id/students')
-  .post((req, res) => {
-    Users.createStudents(req, res);
-  })
-  .get((req, res) => {
-    Users.getStudents(req, res);
-  });
-
 router.route('/activities')
   .get((req, res) => {
     Activities.getActivities(req, res);
