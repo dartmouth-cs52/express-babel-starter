@@ -4,8 +4,14 @@ import mongoose, { Schema } from 'mongoose';
 
 // the schema for the activity model
 const ActivitySchema = new Schema({
-  gradeLevels: [Number], // 1 => K-2, 2 => 3-5, 3 => 6-8
-  category: Number, // 1=>autism, 2=>hearing, 3=>visual, 4=>learning, 5=>physical, 6=>social, 7=>speech, 8=>cognitive
+  gradeLevels: {
+    type: [Number],
+    required: true,
+  }, // 1 => K-2, 2 => 3-5, 3 => 6-8
+  category: { // 1=>autism, 2=>hearing, 3=>visual, 4=>learning, 5=>physical, 6=>social, 7=>speech, 8=>cognitive
+    type: Number,
+    required: true,
+  },
   name: String,
   url: String,  // url where the html for the activity can be found
   instructions: String, // Markdown formatted instructions for the activity
