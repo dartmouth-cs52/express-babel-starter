@@ -9,6 +9,10 @@ export const createUser = (req, res) => {
   user.lastName = req.body.lastName;
   user.username = req.body.username;
   user.role = req.body.role;
+  user.activities = req.body.activities;
+  user.gradeLevels = req.body.gradeLevels;
+  user.categories = req.body.categories;
+  user.students = req.body.students;
   user.teacher = req.body.teacher;
   user.expirationDate = req.body.expirationDate;
   console.log(req.body, user);
