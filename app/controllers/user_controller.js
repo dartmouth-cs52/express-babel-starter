@@ -53,7 +53,13 @@ export const deleteUser = (req, res) => {
   res.send('delete a user here');
 };
 
-// TODO: build this function
+
 export const updateUser = (req, res) => {
-  res.send('update a user here');
+  UserModel.update({ _id: req.params.id }, req.body)
+    .then(result => {
+      res.json({ message: 'User Updated!', user: result });
+    })
+    .catch(error => {
+      res.json({ error });
+    });
 };
