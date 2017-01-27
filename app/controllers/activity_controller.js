@@ -49,5 +49,11 @@ export const deleteActivity = (req, res) => {
 
 // TODO: build this function
 export const updateActivity = (req, res) => {
-  res.send('update a activity here');
+  ActivityModel.update({ _id: req.params.id }, req.body)
+    .then(result => {
+      res.json({ message: 'Activity Updated!', activity: result });
+    })
+    .catch(error => {
+      res.json({ error });
+    });
 };
