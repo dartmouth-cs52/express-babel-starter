@@ -42,12 +42,16 @@ export const getActivity = (req, res) => {
     });
 };
 
-// TODO: build this function
 export const deleteActivity = (req, res) => {
-  res.send('delete a activity here');
+  ActivityModel.remove({ _id: req.params.id })
+    .then(result => {
+      res.json({ message: 'Activity Removed!', activity: result });
+    })
+    .catch(error => {
+      res.json({ error });
+    });
 };
 
-// TODO: build this function
 export const updateActivity = (req, res) => {
   ActivityModel.update({ _id: req.params.id }, req.body)
     .then(result => {
