@@ -48,9 +48,14 @@ export const getUser = (req, res) => {
     });
 };
 
-// TODO: build this function
 export const deleteUser = (req, res) => {
-  res.send('delete a user here');
+  UserModel.remove({ _id: req.params.id })
+    .then(result => {
+      res.json({ message: 'User Removed!', result });
+    })
+    .catch(error => {
+      res.json({ error });
+    });
 };
 
 
