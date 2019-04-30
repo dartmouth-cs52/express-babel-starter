@@ -26,6 +26,7 @@ app.set('views', path.join(__dirname, '../src/views'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// additional init stuff should go before hitting the routing
 
 // default index route
 app.get('/', (req, res) => {
