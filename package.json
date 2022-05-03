@@ -9,7 +9,7 @@
     "start": "nodemon src/server.js --exec babel-node",
     "babel-start": "babel-node src/server.js",
     "build": "babel src -d dist",
-    "prod": "npm run build; node dist/server.js"
+    "prod": "node dist/server.js"
   },
   "license": "ISC",
   "engines": {
