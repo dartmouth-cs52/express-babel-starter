@@ -1,8 +1,8 @@
 {
-  "name": "example_express_with_es6",
-  "version": "3.0.0",
+  "name": "express babel eslint node starter",
+  "version": "5.0.0",
   "description": "",
-  "author": "",
+  "author": "CS52",
   "main": "src/server.js",
   "scripts": {
     "test": "eslint src",
