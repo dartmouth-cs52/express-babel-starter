@@ -34,12 +34,15 @@ app.get('/', (req, res) => {
 
 // START THE SERVER
 // =============================================================================
-(async () => {
+async function startServer() {
   try {
     const port = process.env.PORT || 9090;
     app.listen(port);
+
     console.log(`Listening on port ${port}`);
   } catch (error) {
     console.error(error);
   }
-})();
+}
+
+startServer();
