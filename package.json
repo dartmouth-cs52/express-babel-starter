@@ -1,6 +1,6 @@
 {
   "name": "express babel eslint node starter",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "",
   "author": "CS52",
   "main": "src/server.js",
@@ -13,30 +13,30 @@
   },
   "license": "ISC",
   "engines": {
-    "node": ">=15 <=18"
+    "node": ">=18 <=20"
   },
   "nodemonConfig": {
     "signal": "SIGHUP",
     "delay": "1500"
   },
   "dependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10",
-    "@babel/node": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
-    "body-parser": "^1.20.0",
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.5",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
-    "ejs": "^3.1.7",
-    "express": "^4.18.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.17.0",
-    "eslint": "^8.14.0",
+    "@babel/eslint-parser": "^7.21.8",
+    "eslint": "^8.39.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.29.4",
-    "nodemon": "^2.0.16"
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "nodemon": "^2.0.22"
   }
 }
